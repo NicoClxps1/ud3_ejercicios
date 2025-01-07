@@ -1,66 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+1 ¿Qué crees que hace el método create de la clase Schema?
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+El método create de la clase Schema en Laravel se utiliza para crear una nueva tabla en la base de datos. Es uno de los métodos más comunes en las migraciones, ya que define la estructura de la tabla, como sus columnas, índices, claves, etc.
 
-## About Laravel
+2 ¿Qué crees que hace $table->string('email')->primary();?
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+El código $table->string('email')->primary(); está definiendo una columna llamada email como clave primaria (primary key) de la tabla.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Explicación:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+$table->string('email'): Define una columna llamada email de tipo string (cadena de texto).
+->primary(): Hace que la columna email sea una clave primaria de la tabla.
+Esto significa que los valores de la columna email deben ser únicos y no nulos. Además, Laravel usará automáticamente un índice único en esta columna, asegurando que no haya duplicados en los valores de email.
 
-## Learning Laravel
+3¿Cuántas tablas hay definidas? Indica el nombre de cada tabla.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Para responder a esta pregunta, deberías revisar todos los archivos dentro de la carpeta database/migrations, ya que ahí es donde se definen las migraciones que crean las tablas.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Abre los archivos dentro de database/migrations/.
+Dentro de cada archivo de migración, busca las llamadas al método Schema::create(). Cada llamada a este método define una tabla.
+Ejercicio 4 (1p)
+Revisa los ficheros de la carpeta database/migrations y contesta a las siguientes preguntas:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. ¿Qué crees que hace el método create de la clase Schema?
+El método create de la clase Schema en Laravel se utiliza para crear una nueva tabla en la base de datos. Este método recibe dos parámetros:
+El nombre de la tabla (un string).
+Una función de callback que se pasa como segundo parámetro, donde se definen las columnas y restricciones de la tabla utilizando el objeto $table.
+2. ¿Qué crees que hace $table->string('email')->primary();?
+Este código está definiendo una columna en una tabla de base de datos y la marca como la clave primaria de la tabla.
+$table->string('email'): Define una columna llamada email que almacenará una cadena de texto (por lo general, un correo electrónico).
+->primary(): Este método convierte la columna email en la clave primaria de la tabla. Al ser clave primaria, los valores en esta columna deben ser únicos y no nulos.
+3. ¿Cuantas tablas hay definidas? Indica el nombre de cada tabla
+8
 
-## Laravel Sponsors
+Ejercicio 5 (1p)
+¿Cuántas tablas aparecen?
+9
+Ejercicio 6 (1p)
+Indica qué realiza los siguientes comandos:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- php artisan migrate:
+Descripción: Este comando ejecuta las migraciones pendientes en la base de datos. Esto significa que Laravel buscará en la carpeta database/migrations todas las migraciones que aún no se han ejecutado y las aplicará a la base de dato
+- php artisan migrate:status:
+Descripción: Este comando muestra el estado de todas las migraciones, es decir, qué migraciones se han ejecutado y cuáles están pendientes. Te dará una lista de las migraciones con una columna Ran? que indica si cada migración se ha aplicado o no.
+- php artisan migrate:rollback:
+Descripción: Este comando revierte la última migración que se haya ejecutado. Si tienes migraciones que modifican la base de datos (como create o alter), este comando revertirá esos cambios.
+- php artisan migrate:reset:
+Descripción: Este comando revierte todas las migraciones que se han ejecutado. Es más agresivo que migrate:rollback, ya que deshace todas las migraciones aplicadas, no solo la última.
+- php artisan migrate:refresh:
+Descripción: Este comando revierte todas las migraciones y luego las vuelve a ejecutar. Es útil si quieres "reiniciar" el estado de las migraciones en tu base de datos. También puedes usar la opción --seed para volver a sembrar la base de datos después de ejecutar las migraciones.
+- php artisan make:migration:
+Descripción: Este comando genera un nuevo archivo de migración. Te permite crear un archivo de migración vacío que luego puedes editar para definir la estructura de una tabla, columnas, índices, etc.
+- php artisan migrate --seed:
+Descripción: Este comando ejecuta las migraciones y luego ejecuta los "seeders" (semillas) para poblar la base de datos con datos de ejemplo. Es útil cuando necesitas no solo crear las tablas, sino también poblarlas con datos iniciales.

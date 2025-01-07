@@ -1,0 +1,3 @@
+FROM mariadb:latest
+ENV MARIADB_ROOT_PASSWORD=m1_s3cr3t
+EXPOSE 3306
