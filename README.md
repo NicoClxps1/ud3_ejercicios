@@ -52,3 +52,21 @@ Descripción: Este comando revierte todas las migraciones y luego las vuelve a e
 Descripción: Este comando genera un nuevo archivo de migración. Te permite crear un archivo de migración vacío que luego puedes editar para definir la estructura de una tabla, columnas, índices, etc.
 - php artisan migrate --seed:
 Descripción: Este comando ejecuta las migraciones y luego ejecuta los "seeders" (semillas) para poblar la base de datos con datos de ejemplo. Es útil cuando necesitas no solo crear las tablas, sino también poblarlas con datos iniciales.
+Ejercicio 8 (1p)
+¿Qué pasos debemos dar si queremos añadir el campo $table->string('apellido'); a la tabla alumnos del ejercicio anterior?
+1. Crear una nueva migración
+2. Editar la migración
+3. Ejecutar la migración
+4. Verificar los cambios en la base de datos
+5. Revertir los cambios (opcional)
+
+Ejercicio 9 (1p)
+Muestra el contenido de la tabla alumnos y comprueba que se han creado correctamente.
+MariaDB [test2]> SELECT * FROM alumnos;
++----+------------------+----------------------------+---------------------+---------------------+
+| id | nombre           | email                      | created_at          | updated_at          |
++----+------------------+----------------------------+---------------------+---------------------+
+|  1 | Juan Pérez       | juan.perez@example.com     | 2025-01-07 19:35:45 | 2025-01-07 19:35:45 |
+|  2 | María González   | maria.gonzalez@example.com | 2025-01-07 19:35:45 | 2025-01-07 19:35:45 |
+|  3 | Carlos López     | carlos.lopez@example.com   | 2025-01-07 19:35:45 | 2025-01-07 19:35:45 |
++----+------------------+----------------------------+---------------------+---------------------+
