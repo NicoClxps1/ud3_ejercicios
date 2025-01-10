@@ -6,26 +6,29 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class AlumnosTableSeeder extends Seeder
+class AsignaturasTableSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        DB::table('alumnos')->insert([
+        DB::table('asignaturas')->insert([
             [
-                'nombre' => 'Juan Pérez',
-                'email' => 'juan.perez@example.com',
+                'nombre' => 'Matemáticas',
+                'descripcion' => 'Curso de matemáticas avanzadas',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'nombre' => 'María González',
-                'email' => 'maria.gonzalez@example.com',
+                'nombre' => 'Historia',
+                'descripcion' => 'Curso de historia mundial',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'nombre' => 'Carlos López',
-                'email' => 'carlos.lopez@example.com',
+                'nombre' => 'Ciencias',
+                'descripcion' => 'Curso de ciencias generales',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
